@@ -1,0 +1,35 @@
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  datasource:
+    url: jdbc:h2:~/todoList
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  profiles:
+    active: swagger
+
+  main:
+    allow-circular-references: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update #create update none
+    show-sql: true
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+jwt:
+  password: soloProject_todoList
+  atk: 86400000 # 24 * 60 * 60 * 1000L; ???? ??? ?
+  rtk: 2592000000 # 30 * 24 * 60 * 60 * 1000L; ???? ??? ?
